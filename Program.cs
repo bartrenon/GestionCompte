@@ -27,7 +27,3 @@ Console.WriteLine($"{c.solde} {c.ligneDeCredit}");
 c.LigneDeCredit = -1500;
 
 Console.WriteLine($"{c.solde} {c.ligneDeCredit}");
-
-Banque b = new Banque("ING");
-
-Console.WriteLine(b.nom);
