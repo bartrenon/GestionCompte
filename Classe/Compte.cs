@@ -6,6 +6,9 @@
         public decimal solde { get; protected set; }
         public Personne titulaire { get; set; }
 
+
+
+
         public void Retrait(decimal montant)
         {
             if (montant > 0)
