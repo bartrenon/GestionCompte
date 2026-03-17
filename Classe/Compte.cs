@@ -6,9 +6,9 @@
         public decimal solde { get; protected set; }
         public Personne titulaire { get; set; }
 
-        public void Retrait(decimal montant)
+        public virtual void Retrait(decimal montant)
         {
-            if (montant > 0)
+            if ((montant > 0 && (solde - montant) >= 0)
             {
                 solde -= montant;
                 return;
@@ -17,7 +17,7 @@
             Console.WriteLine($"le montant est invalide");
         }
 
-        public void Depot(decimal montant)
+        public virtual void Depot(decimal montant)
         {
             if (montant > 0)
             {

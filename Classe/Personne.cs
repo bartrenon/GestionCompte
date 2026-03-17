@@ -6,13 +6,6 @@
 
         public string prenom { get; set; }
 
-        public DateOnly dateNaiss { get; set; }
-
-        public Personne(string nom, string prenom)
-        {
-            this.nom = nom;
-            this.prenom = prenom;
-            dateNaiss = new DateOnly(2024, 3, 17);
-        }
+        public DateTime dateNaiss { get; set; }
     }
 }

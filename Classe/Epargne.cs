@@ -4,25 +4,17 @@ namespace GestionCompte.Classe
 {
     public class Epargne : Compte
     {
-        public DateOnly dateDernierRetrait {get; set;}
+        public DateTime dateDernierRetrait {get; set;}
 
-        public void Retrait(decimal montant)
+        public override void Retrait(decimal montant)
         {
-            if (montant > 0 && (solde - montant) >= 0)
+            if (base.Retrait(montant)) 
             {
-                solde -= montant;
-                return;
+                dateDernierRetrait = DateTime.Now;
+                return true;
             }
 
-            Console.WriteLine($"le montant est invalide");
-        }
-
-        public Epargne(string numero, decimal solde, DateOnly dateDernierRetrait, Personne p)
-        {
-            this.numero = numero;
-            this.solde = solde;
-            this.dateDernierRetrait = dateDernierRetrait;
-            titulaire = p;
+            return false;
         }
     }    
 }
