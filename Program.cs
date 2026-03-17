@@ -1,4 +1,4 @@
-﻿using GestionProjet.Classe;
+﻿using GestionCompte.Classe;
 
 Personne p = new Personne("bart", "renon");
 

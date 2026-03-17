@@ -1,12 +1,9 @@
-﻿namespace GestionProjet.Classe
+﻿namespace GestionCompte.Classe
 {
-    public class Courant
+    public class  Courant : Compte
     {
-        public string? numero { get; set; }
-        public decimal solde { get; private set; }
-        public decimal ligneDeCredit { get; private set; }
-
-        public Personne? titulaire { get; set; }
+        public decimal ligneDeCredit;
+        
         public decimal LigneDeCredit
         {
             get
@@ -34,17 +31,6 @@
             {
                 solde -= montant;
                 return;
-            }
-
-            Console.WriteLine($"le montant est invalide");
-        }
-
-        public void Depot(decimal montant)
-        {
-            if(montant > 0) 
-            {
-               solde += montant;
-               return;
             }
 
             Console.WriteLine($"le montant est invalide");

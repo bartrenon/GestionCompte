@@ -1,4 +1,4 @@
-﻿namespace GestionProjet.Classe
+﻿namespace GestionCompte.Classe
 {
     public class Personne
     {
@@ -6,13 +6,13 @@
 
         public string prenom { get; set; }
 
-        public DateTime dateNaiss { get; set; }
+        public DateOnly dateNaiss { get; set; }
 
         public Personne(string nom, string prenom)
         {
             this.nom = nom;
             this.prenom = prenom;
-            dateNaiss = DateTime.Now;
+            dateNaiss = new DateOnly(2024, 3, 17);
         }
     }
 }
