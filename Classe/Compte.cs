@@ -5,8 +5,8 @@
         public string numero { get; set; }
         public decimal solde { get; protected set; }
         public Personne titulaire { get; set; }
-
         public virtual void Retrait(decimal montant)
+        public void Retrait(decimal montant)
         {
             if ((montant > 0 && (solde - montant) >= 0)
             {
