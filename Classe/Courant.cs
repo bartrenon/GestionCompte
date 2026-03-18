@@ -17,15 +17,16 @@
             }
         }
 
-        public override void Retrait(decimal montant)
+        public override bool Retrait(decimal montant)
         {
             if(montant > 0 && solde - montant >= -LigneDeCredit) 
             {
                 solde -= montant;
-                return;
+                return true;
             }
 
             Console.WriteLine($"le montant est invalide");
+            return false;
         }
     }
 }
