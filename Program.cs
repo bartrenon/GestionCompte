@@ -1,1 +1,3 @@
-﻿Console.WriteLine("fgf");
+﻿using GestionCompte.Classe;
+
+Console.WriteLine("fgf");

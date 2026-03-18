@@ -14,6 +14,11 @@
 
         public void Supprimer(string numero)
         {
+            if (!dictionaireCompte.ContainsKey(numero)) 
+            {
+                return;
+            }
+
             dictionaireCompte.Remove(numero);
         }
 
