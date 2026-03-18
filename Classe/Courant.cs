@@ -29,5 +29,15 @@
             Console.WriteLine($"le montant est invalide");
             return false;
         }
+
+        protected override decimal CalculInteret() 
+        {
+            if (this.solde < 0) 
+            {
+                return this.solde * (decimal)(3.00 / 100.00);
+            }
+
+            return this.solde * (decimal)(9.75 / 100.00);
+        }
     }
 }

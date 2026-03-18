@@ -16,5 +16,10 @@ namespace GestionCompte.Classe
 
             return false;
         }
+
+        protected override decimal CalculInteret()
+        {
+            return this.solde * (decimal)(4.5/100.00);
+        }
     }    
 }
