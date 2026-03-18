@@ -16,6 +16,7 @@
                  ligneDeCredit = value >= 0 ? value : ligneDeCredit;
             }
         }
+
         public override void Retrait(decimal montant)
         {
             if(montant > 0 && solde - montant >= -LigneDeCredit) 

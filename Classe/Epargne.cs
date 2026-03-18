@@ -6,7 +6,7 @@ namespace GestionCompte.Classe
     {
         public DateTime dateDernierRetrait {get; set;}
 
-        public override void Retrait(decimal montant)
+        public override bool Retrait(decimal montant)
         {
             if (base.Retrait(montant)) 
             {

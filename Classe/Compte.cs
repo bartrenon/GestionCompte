@@ -5,27 +5,29 @@
         public string numero { get; set; }
         public decimal solde { get; protected set; }
         public Personne titulaire { get; set; }
-        public virtual void Retrait(decimal montant)
-        public void Retrait(decimal montant)
+
+        public virtual bool Retrait(decimal montant)
         {
-            if ((montant > 0 && (solde - montant) >= 0)
+            if ((montant > 0 && (solde - montant) >= 0))
             {
                 solde -= montant;
-                return;
+                return true;
             }
 
             Console.WriteLine($"le montant est invalide");
+            return false;
         }
 
-        public virtual void Depot(decimal montant)
+        public virtual bool Depot(decimal montant)
         {
             if (montant > 0)
             {
                 solde += montant;
-                return;
+                return true;
             }
 
             Console.WriteLine($"le montant est invalide");
+            return false;
         }
     }
 }
