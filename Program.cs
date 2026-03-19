@@ -1,23 +1,27 @@
 ﻿using GestionCompte.Classe;
+using GestionCompte.Interface;
 
-Console.WriteLine("fgf");
+ICustomer client = new Courant
+{
+    numero = "123",
+    titulaire = new Personne() { prenom = "bart"},
+    LigneDeCredit = 200
+};
 
+client.Depot(500);
+client.Retrait(200);
+Console.WriteLine(client.solde);
 
-Courant c = new Courant();
-Courant c2 = new Courant();
+IBanker banquier = new Courant
+{
+    numero = "124",
+    titulaire = new Personne() { prenom = "bart" },
+    LigneDeCredit = 600
+};
 
-c.Depot(1500m);
-c2.LigneDeCredit = 500;
-c2.Depot(200);
-
-Console.WriteLine(c.solde);
-Console.WriteLine(c2.solde);
-
-c2.Retrait(400);
-Console.WriteLine(c2.solde);
-
-c.AppliquerInteret();
-c2.AppliquerInteret();
-
-Console.WriteLine(c.solde);
-Console.WriteLine(c2.solde);
+banquier.Depot(500);
+banquier.Retrait(200);
+banquier.AppliquerInteret();
+Console.WriteLine(banquier.solde);
+Console.WriteLine(banquier.numero);
+Console.WriteLine(banquier.titulaire.prenom);
