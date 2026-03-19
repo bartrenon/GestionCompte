@@ -30,5 +30,10 @@
             Console.WriteLine($"le montant est invalide");
             return false;
         }
+
+        public void AppliquerInteret() 
+        {
+            solde += CalculInteret();
+        }
     }
 }

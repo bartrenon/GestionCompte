@@ -19,7 +19,7 @@ namespace GestionCompte.Classe
 
         protected override decimal CalculInteret()
         {
-            return this.solde * (decimal)(4.5/100.00);
+            return this.solde * (4.5m/100);
         }
     }    
 }
