@@ -1,5 +1,4 @@
 ﻿using GestionCompte.Classe;
-using System.Runtime.CompilerServices;
 
 Console.WriteLine("fgf");
 
