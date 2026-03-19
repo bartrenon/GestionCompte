@@ -4,7 +4,7 @@ namespace GestionCompte.Classe
 {
     public class Epargne : Compte
     {
-        public DateTime dateDernierRetrait {get; set;}
+        public DateTime dateDernierRetrait {get; private set;}
 
         public override bool Retrait(decimal montant)
         {
@@ -15,6 +15,11 @@ namespace GestionCompte.Classe
             }
 
             return false;
+        }
+
+        protected override decimal CalculInteret()
+        {
+            return this.solde * (decimal)(4.5/100.00);
         }
     }    
 }

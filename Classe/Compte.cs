@@ -1,10 +1,11 @@
 ﻿namespace GestionCompte.Classe
 {
-    public class Compte
+    public abstract class Compte
     {
         public string numero { get; set; }
         public decimal solde { get; protected set; }
         public Personne titulaire { get; set; }
+        protected abstract decimal CalculInteret();
 
         public virtual bool Retrait(decimal montant)
         {
@@ -28,6 +29,11 @@
 
             Console.WriteLine($"le montant est invalide");
             return false;
+        }
+
+        public void AppliquerInteret() 
+        {
+            solde += CalculInteret();
         }
     }
 }
