@@ -32,12 +32,12 @@
 
         protected override decimal CalculInteret() 
         {
-            if (this.solde < 0) 
+            if (this.solde > 0) 
             {
-                return this.solde * (decimal)(3.00 / 100.00);
+                return this.solde * (3m / 100);
             }
 
-            return this.solde * (decimal)(9.75 / 100.00);
+            return this.solde * (9.75m / 100);
         }
     }
 }
