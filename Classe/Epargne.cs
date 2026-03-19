@@ -4,7 +4,7 @@ namespace GestionCompte.Classe
 {
     public class Epargne : Compte
     {
-        public DateTime dateDernierRetrait {get; set;}
+        public DateTime dateDernierRetrait {get; private set;}
 
         public override bool Retrait(decimal montant)
         {
