@@ -1,6 +1,8 @@
-﻿namespace GestionCompte.Classe
+﻿using GestionCompte.Interface;
+
+namespace GestionCompte.Classe
 {
-    public abstract class Compte
+    public abstract class Compte : IBanker, ICustomer
     {
         public string numero { get; set; }
         public decimal solde { get; protected set; }
