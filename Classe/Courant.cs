@@ -34,10 +34,10 @@
         {
             if (this.solde > 0) 
             {
-                return this.solde * (3m / 100);
+                return this.solde * 0.03m;
             }
 
-            return this.solde * (9.75m / 100) * -1;
+            return this.solde * 0.0975m;
         }
     }
 }
