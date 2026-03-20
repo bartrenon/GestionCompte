@@ -10,12 +10,12 @@ namespace GestionCompte.Classe
         public Personne titulaire { get; private set; }
         protected abstract decimal CalculInteret();
 
-        public Compte(string numero)
+        protected Compte(string numero)
         {
             this.numero = numero;
         }
 
-        public Compte(string numero, decimal solde, Personne titulaire) : this(numero)
+        protected Compte(string numero, decimal solde, Personne titulaire) : this(numero)
         {
             this.solde = solde;
             this.titulaire = titulaire;
