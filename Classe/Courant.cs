@@ -3,7 +3,17 @@
     public class  Courant : Compte
     {
         public decimal ligneDeCredit;
-        
+
+        public Courant(string numero,  Personne titulaire, decimal ligneDeCredit) : base(numero, 0, titulaire)
+        {
+            LigneDeCredit = ligneDeCredit;
+        }
+
+        public Courant(decimal ligneDeCredit ,string numero, decimal solde, Personne titulaire) : base(numero, solde, titulaire)
+        {
+            LigneDeCredit = ligneDeCredit;
+        }
+
         public decimal LigneDeCredit
         {
             get

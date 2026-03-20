@@ -1,23 +1,19 @@
 ﻿using GestionCompte.Classe;
 using GestionCompte.Interface;
 
-ICustomer client = new Courant
-{
-    numero = "123",
-    titulaire = new Personne() { prenom = "bart"},
-    LigneDeCredit = 200
-};
+Personne titulaire = new Personne("renon","bart", DateTime.Now) ;
+
+Console.WriteLine("Pour les compte Epargne");
+
+ICustomer client = new Epargne(DateTime.Now, "123", 500, titulaire);
 
 client.Depot(500);
 client.Retrait(200);
 Console.WriteLine(client.solde);
 
-IBanker banquier = new Courant
-{
-    numero = "124",
-    titulaire = new Personne() { prenom = "bart" },
-    LigneDeCredit = 600
-};
+Console.WriteLine("Fin Pour le customer");
+
+IBanker banquier = new Epargne(DateTime.Now, "124", 500, titulaire);
 
 banquier.Depot(500);
 banquier.Retrait(200);
@@ -25,3 +21,25 @@ banquier.AppliquerInteret();
 Console.WriteLine(banquier.solde);
 Console.WriteLine(banquier.numero);
 Console.WriteLine(banquier.titulaire.prenom);
+
+Console.WriteLine("Fin Pour le banquier");
+Console.WriteLine("Pour les compte courant");
+
+ICustomer client1 = new Courant(200, "125", 500, titulaire);
+
+client.Depot(500);
+client.Retrait(200);
+Console.WriteLine(client.solde);
+
+Console.WriteLine("Fin Pour le customer");
+
+IBanker banquier1 = new Courant(200, "126", 500, titulaire);
+
+banquier.Depot(500);
+banquier.Retrait(200);
+banquier.AppliquerInteret();
+Console.WriteLine(banquier.solde);
+Console.WriteLine(banquier.numero);
+Console.WriteLine(banquier.titulaire.prenom);
+
+Console.WriteLine("Fin Pour le banquier");
