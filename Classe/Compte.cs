@@ -4,10 +4,22 @@ namespace GestionCompte.Classe
 {
     public abstract class Compte : IBanker, ICustomer
     {
+
         public string numero { get; set; }
         public decimal solde { get; protected set; }
         public Personne titulaire { get; set; }
         protected abstract decimal CalculInteret();
+
+        public Compte(string numero)
+        {
+            this.numero = numero;
+        }
+
+        public Compte(string numero, decimal solde, Personne titulaire) : this(numero)
+        {
+            this.solde = solde;
+            this.titulaire = titulaire;
+        }
 
         public virtual bool Retrait(decimal montant)
         {

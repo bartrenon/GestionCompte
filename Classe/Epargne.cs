@@ -4,7 +4,13 @@ namespace GestionCompte.Classe
 {
     public class Epargne : Compte
     {
+
         public DateTime dateDernierRetrait {get; private set;}
+
+        public Epargne(DateTime dateDernierRetrait, string numero, decimal solde, Personne titulaire) : base(numero, solde, titulaire)
+        {
+            this.dateDernierRetrait = dateDernierRetrait;
+        }
 
         public override bool Retrait(decimal montant)
         {
