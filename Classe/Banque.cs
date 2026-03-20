@@ -2,8 +2,8 @@
 {
     internal class Banque
     {
-        public string nom { get; set; }
-        public Dictionary<string, Compte> dictionaireCompte { get; set; }
+        public string nom { get; init; }
+        public Dictionary<string, Compte> dictionaireCompte { get; init; }
 
         public Banque(string nom)
         {
