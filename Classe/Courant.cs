@@ -32,7 +32,7 @@
         {
             if(montant > 0 && solde - montant >= -LigneDeCredit) 
             {
-                solde -= montant;
+                this.SetSolde(solde - montant);
                 return true;
             }
 
@@ -42,12 +42,12 @@
 
         protected override decimal CalculInteret() 
         {
-            if (this.solde > 0) 
+            if (solde > 0) 
             {
-                return this.solde * 0.03m;
+                return solde * 0.03m;
             }
 
-            return this.solde * 0.0975m;
+            return solde * 0.0975m;
         }
     }
 }

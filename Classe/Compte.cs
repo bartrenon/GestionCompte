@@ -5,9 +5,9 @@ namespace GestionCompte.Classe
     public abstract class Compte : IBanker, ICustomer
     {
 
-        public string numero { get; set; }
-        public decimal solde { get; protected set; }
-        public Personne titulaire { get; set; }
+        public string numero { get; private set; }
+        public decimal solde { get; private set; }
+        public Personne titulaire { get; private set; }
         protected abstract decimal CalculInteret();
 
         public Compte(string numero)
@@ -48,6 +48,11 @@ namespace GestionCompte.Classe
         public void AppliquerInteret() 
         {
             solde += CalculInteret();
+        }
+
+        protected void SetSolde(decimal montant)
+        {
+            solde = montant;
         }
     }
 }
