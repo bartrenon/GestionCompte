@@ -23,7 +23,15 @@
 
             set
             {
-                 ligneDeCredit = value >= 0 ? value : ligneDeCredit;
+                if (value < 0)
+                {
+                    throw new InvalidOperationException
+                        ("La ligne de crédit doit être supérieure ou égale à 0.");
+                }
+                else
+                {
+                    ligneDeCredit = value;
+                }
             }
         }
 
