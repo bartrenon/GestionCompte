@@ -1,4 +1,5 @@
-﻿using GestionCompte.Interface;
+﻿using GestionCompte.Exception;
+using GestionCompte.Interface;
 
 namespace GestionCompte.Classe
 {
@@ -28,21 +29,25 @@ namespace GestionCompte.Classe
                 solde -= montant;
                 return true;
             }
-
-            Console.WriteLine($"le montant est invalide");
-            return false;
+            else 
+            {
+                throw new SoldeInsuffisantException
+                    ("Solde insuffisant pour effectuer le retrait.");
+                return false;
+            }
         }
 
         public virtual bool Depot(decimal montant)
         {
-            if (montant > 0)
+
+            if (montant <= 0) 
             {
-                solde += montant;
-                return true;
+                throw new ArgumentOutOfRangeException();
+                return false;
             }
 
-            Console.WriteLine($"le montant est invalide");
-            return false;
+            solde += montant;
+            return true;
         }
 
         public void AppliquerInteret() 

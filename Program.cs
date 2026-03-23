@@ -1,5 +1,6 @@
 ﻿using GestionCompte.Classe;
 using GestionCompte.Interface;
+using System.Reflection.Metadata;
 
 Personne titulaire = new Personne("renon","bart", DateTime.Now) ;
 
@@ -8,7 +9,27 @@ Console.WriteLine("Pour les compte Epargne");
 ICustomer client = new Epargne(DateTime.Now, "123", 500, titulaire);
 
 client.Depot(500);
+
+try
+{
+    client.Depot(-500);
+}
+catch (Exception e)
+{
+	Console.WriteLine("Le montant doit être supérieur à 0");
+}
+
 client.Retrait(200);
+
+try
+{
+    client.Retrait(15000);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+
 Console.WriteLine(client.solde);
 
 Console.WriteLine("Fin Pour le customer");
@@ -43,3 +64,18 @@ Console.WriteLine(banquier1.numero);
 Console.WriteLine(banquier1.titulaire.prenom);
 
 Console.WriteLine("Fin Pour le banquier");
+
+Courant c = new Courant(200, "17", 500, titulaire);
+
+c.LigneDeCredit = 500;
+
+try
+{
+    c.LigneDeCredit = -1805;
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+
+Console.WriteLine(c.LigneDeCredit);
